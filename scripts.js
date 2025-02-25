@@ -18,7 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle hero image loading
   const hero = document.querySelector('.hero');
   const heroImage = new Image();
-  heroImage.src = '/assets/pphoto.jpg';
+  heroImage.src = './assets/pphoto.jpg';
+
+  // Add error handling
+  heroImage.onerror = () => {
+    console.error('Could not load hero image');
+    // Fallback to a solid color or alternative image
+    hero.style.backgroundColor = '#d4a373';
+    hero.classList.add('loaded');
+  };
+
   heroImage.onload = () => {
     hero.style.backgroundImage = `url('${heroImage.src}')`;
     hero.classList.add('loaded');
