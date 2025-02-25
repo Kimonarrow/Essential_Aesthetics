@@ -18,12 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle hero image loading
   const hero = document.querySelector('.hero');
   const heroImage = new Image();
-  heroImage.src = 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80';
+  heroImage.src = '/assets/pphoto.jpg';
   heroImage.onload = () => {
+    hero.style.backgroundImage = `url('${heroImage.src}')`;
     hero.classList.add('loaded');
+    
+    // Ensure proper styling for full-size, single background
+    hero.style.backgroundRepeat = 'no-repeat';
+    hero.style.backgroundSize = 'cover';
+    hero.style.backgroundPosition = 'center';
   };
 
-  // Three.js Background Setup
+  // Three.js Background Setup - Don't show on hero section
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -32,6 +38,19 @@ document.addEventListener('DOMContentLoaded', function() {
   renderer.setPixelRatio(window.devicePixelRatio);
   document.body.appendChild(renderer.domElement);
   renderer.domElement.classList.add('three-js-background');
+  
+  // Modify Three.js background to not show on hero section
+  const threeJsBg = document.querySelector('.three-js-background');
+  threeJsBg.style.opacity = '0'; // Start invisible
+  
+  // Show Three.js background only after scrolling past hero
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.8) {
+      threeJsBg.style.opacity = '0.8';
+    } else {
+      threeJsBg.style.opacity = '0';
+    }
+  });
 
   // Create particles
   const particlesGeometry = new THREE.BufferGeometry();
@@ -175,18 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Form submission handling
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      // Here you would typically send the email to your server
-      alert('Thank you for subscribing! We\'ll be in touch soon.');
-      this.reset();
-    });
-  }
-
   // Scroll indicator fade out
   const scrollIndicator = document.querySelector('.scroll-indicator');
   if (scrollIndicator) {
@@ -208,14 +215,14 @@ document.addEventListener('DOMContentLoaded', function() {
     revealButton.addEventListener('click', () => {
       revealContent.classList.toggle('active');
       
-      // Change button text based on state
+      // Αλλαγή κειμένου κουμπιού ανάλογα με την κατάσταση
       const buttonSpan = revealButton.querySelector('span');
       if (revealContent.classList.contains('active')) {
-        buttonSpan.textContent = 'Hide the secret';
+        buttonSpan.textContent = 'Απόκρυψη';
         revealButton.querySelector('i').classList.remove('fa-lightbulb');
         revealButton.querySelector('i').classList.add('fa-eye-slash');
       } else {
-        buttonSpan.textContent = 'Curious about this website?';
+        buttonSpan.textContent = 'Περίεργοι για την ιστοσελίδα μας;';
         revealButton.querySelector('i').classList.remove('fa-eye-slash');
         revealButton.querySelector('i').classList.add('fa-lightbulb');
       }
