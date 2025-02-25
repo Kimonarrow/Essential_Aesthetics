@@ -24,7 +24,7 @@ A modern, elegant website for Essential Aesthetics showcasing our premium beauty
 
 ## View the Site
 
-Visit [https://essential-aesthetics.gr](https://essential-aesthetics.gr) to see the live site.
+Visit  to see the live site.
 
 ## Local Development
 
