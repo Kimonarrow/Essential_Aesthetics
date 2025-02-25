@@ -153,7 +153,6 @@ body {
   background-image: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -212,6 +211,23 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    height: -webkit-fill-available;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1.5rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+
   .hero-cta {
     flex-direction: column;
     align-items: center;
@@ -221,6 +237,12 @@ body {
   .hero-cta .button {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    min-height: -webkit-fill-available;
   }
 }
 
