@@ -173,6 +173,7 @@ body {
   backdrop-filter: blur(5px);
   border-radius: 1rem;
   color: white;
+  margin-bottom: 4rem;
 }
 
 .hero h1 {
@@ -197,7 +198,7 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
@@ -209,7 +210,7 @@ body {
   background: rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
   border-radius: 20px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .hero-cta {
@@ -218,7 +219,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-cta .button {
