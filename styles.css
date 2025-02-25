@@ -204,13 +204,18 @@ body {
   color: #ffffff;
   animation: bounce 2s infinite;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   background: rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin-top: 3rem;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.scroll-indicator i {
+  font-size: 1.2rem;
 }
 
 .hero-cta {
