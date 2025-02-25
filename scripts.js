@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Prevent unwanted zooming on mobile
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  // Fix viewport height for mobile browsers
+  function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  setVH();
+  window.addEventListener('resize', setVH);
+
   // Handle hero image loading
   const hero = document.querySelector('.hero');
   const heroImage = new Image();

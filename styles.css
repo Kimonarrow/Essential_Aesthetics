@@ -132,7 +132,8 @@ body {
 
 /* Hero Section Enhancement */
 .hero {
-  min-height: 100vh;
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,21 +212,48 @@ body {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
   .hero {
     min-height: 100vh;
-    height: -webkit-fill-available;
+    /* Fix for iOS */
+    min-height: -webkit-fill-available;
+    height: auto;
+    padding: 4rem 1rem;
   }
-  
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  /* Adjust font sizes for mobile */
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
-  
+
   .hero .tagline {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
-  
+
   .hero .subtitle {
     font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Ensure content doesn't overflow */
+  .section-card {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    width: calc(100% - 2rem);
   }
 
   .hero-cta {
@@ -242,7 +270,7 @@ body {
 
 @supports (-webkit-touch-callout: none) {
   .hero {
-    min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 }
 
