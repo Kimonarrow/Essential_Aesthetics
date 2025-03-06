@@ -1,0 +1,38 @@
+/* Modern CSS Reset and Base Styles */
+:root {
+  --primary: #d4a373;
+  --primary-dark: #b08968;
+  --secondary: #e9d8a6;
+  --accent: #94d2bd;
+  --text: #2f2f2f;
+  --text-light: #6b7280;
+  --background: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(212, 163, 115, 0.1);
+  --section-spacing: 6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fafaf9;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+} 

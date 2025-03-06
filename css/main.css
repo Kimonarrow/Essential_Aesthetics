@@ -1,0 +1,7 @@
+/* Main CSS file that imports all modular CSS files */
+
+@import 'reset.css';
+@import 'background.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'sections.css'; 

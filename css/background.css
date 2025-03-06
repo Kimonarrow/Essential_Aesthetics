@@ -1,0 +1,199 @@
+/* Background Elements */
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(212, 163, 115, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(233, 216, 166, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(148, 210, 189, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(212, 163, 115, 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, rgba(212, 163, 115, 0.01) 0%, rgba(212, 163, 115, 0.01) 10%, transparent 10%, transparent 20%);
+  z-index: -1;
+}
+
+/* Decorative Background Elements */
+.decorative-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  overflow: hidden;
+  opacity: 0.15;
+}
+
+.decorative-bg::before {
+  content: '';
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  background: radial-gradient(circle, var(--secondary) 0%, transparent 80%);
+  top: -20vmax;
+  right: -20vmax;
+  animation: gentleFloat 40s infinite ease-in-out;
+}
+
+.decorative-bg::after {
+  content: '';
+  position: absolute;
+  width: 40vmax;
+  height: 40vmax;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  bottom: -10vmax;
+  left: -10vmax;
+  animation: gentleFloat 45s infinite ease-in-out reverse;
+}
+
+/* Subtle Patterns */
+.pattern-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* Animated Background Elements */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(40px);
+}
+
+.floating-circle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  background-color: var(--primary);
+  top: 20%;
+  left: 10%;
+  animation: floatAnimation 20s infinite ease-in-out;
+}
+
+.floating-circle:nth-child(2) {
+  width: 250px;
+  height: 250px;
+  background-color: var(--secondary);
+  top: 60%;
+  left: 70%;
+  animation: floatAnimation 25s infinite ease-in-out reverse;
+}
+
+.floating-circle:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  background-color: var(--accent);
+  top: 80%;
+  left: 30%;
+  animation: floatAnimation 30s infinite ease-in-out;
+}
+
+/* Flowing Lines */
+.flowing-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -4;
+}
+
+.flowing-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0.1;
+  animation: flowAnimation 30s linear infinite;
+}
+
+.flowing-line:nth-child(1) { top: 20%; animation-delay: 0s; }
+.flowing-line:nth-child(2) { top: 40%; animation-delay: -6s; }
+.flowing-line:nth-child(3) { top: 60%; animation-delay: -12s; }
+.flowing-line:nth-child(4) { top: 80%; animation-delay: -18s; }
+
+/* Glowing Dots */
+.glowing-dots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+.glowing-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  opacity: 0.4;
+  animation: glowPulse 4s infinite ease-in-out;
+}
+
+.glowing-dot:nth-child(1) { top: 15%; left: 25%; animation-delay: 0s; }
+.glowing-dot:nth-child(2) { top: 65%; left: 75%; animation-delay: -2s; }
+.glowing-dot:nth-child(3) { top: 85%; left: 15%; animation-delay: -4s; }
+.glowing-dot:nth-child(4) { top: 35%; left: 85%; animation-delay: -3s; }
+.glowing-dot:nth-child(5) { top: 5%; left: 55%; animation-delay: -1s; }
+
+/* Three.js Background */
+.three-js-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -6;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Animations */
+@keyframes floatAnimation {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, 30px) rotate(2deg); }
+  66% { transform: translate(-20px, 15px) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes flowAnimation {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.5); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 0.4; }
+}
+
+@keyframes gentleFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(2%, 2%) rotate(1deg); }
+  50% { transform: translate(0, 4%) rotate(0deg); }
+  75% { transform: translate(-2%, 2%) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+} 

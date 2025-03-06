@@ -9,17 +9,19 @@
   <!-- Preload critical resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Italiana&display=swap" as="style">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="./assets/photo.jpg" as="image">
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="./assets/pphoto.jpg" as="image">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- Background Elements -->
   <div class="gradient-bg"></div>
   <div class="decorative-bg"></div>
   <div class="pattern-dots"></div>
@@ -41,6 +43,8 @@
     <div class="glowing-dot"></div>
     <div class="glowing-dot"></div>
   </div>
+  
+  <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
       <h1>Essential Aesthetics</h1>
@@ -56,6 +60,7 @@
     </div>
   </header>
   
+  <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <div class="nav-logo">Essential Aesthetics</div>
@@ -74,6 +79,7 @@
   </nav>
 
   <main>
+    <!-- About Section -->
     <section id="about" class="section-card">
       <div class="section-content">
         <h2>Σχετικά με εμάς</h2>
@@ -86,6 +92,7 @@
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="section-card">
       <div class="section-content">
         <h2>Οι Υπηρεσίες μας</h2>
@@ -118,6 +125,7 @@
       </div>
     </section>
 
+    <!-- Philosophy Section -->
     <section id="philosophy" class="section-card">
       <div class="section-content">
         <h2>Φιλοσοφία</h2>
@@ -145,6 +153,7 @@
       </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience" class="section-card">
       <div class="section-content">
         <h2>Εμπειρία</h2>
@@ -190,6 +199,7 @@
       </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section id="testimonials" class="section-card">
       <div class="section-content">
         <h2>Τι Λένε οι Πελάτες</h2>
@@ -241,6 +251,7 @@
       </div>
     </section>
 
+    <!-- Booking Section -->
     <section id="booking" class="section-card">
       <div class="section-content">
         <h2>Κλείστε Ραντεβού</h2>
@@ -284,6 +295,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-logo">
@@ -324,8 +336,5 @@
       <p>&copy; 2025 Essential Aesthetics. Με επιφύλαξη παντός δικαιώματος.</p>
     </div>
   </footer>
-
-  <!-- Προσθήκη του script tag που λείπει -->
-  <script src="./scripts.js"></script>
 </body>
 </html> 
